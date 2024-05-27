@@ -1,28 +1,37 @@
-import React from 'react'
-import Header from '@/components/Header/Header';
-import { links } from "../../constans/link";
-import Footer from '@/components/Footer/Footer';
-import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
+import React, { useState } from "react";
+import styles from "./replies.module.css"
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+import { links } from "@/constans/link";
 
+const Replies = () => {
+    const [reply, setReply] = useState("");
 
-const index = () => {
-  return (
-    <div>
-       <Header logo={"FORUM"} links={links}/>
-       <Footer/>
+    const handleSubmitReply = (e) => {
+        e.preventDefault();
+        console.log({ reply });
+        setReply("");
+    };
+
+    return (
+      <>
+      <Header  logo={"FORUM"} links={links}/>
+        
+            <form className={styles.form} onSubmit={handleSubmitReply}>
+                <h2>Reply to the question</h2>
+                <textarea
+                    rows={5}
+                    value={reply}
+                    onChange={(e) => setReply(e.target.value)}
+                    
+                  />
+
+                <button >SEND</button>
+            </form>
        
-    </div>
-  )
-}
+        <Footer/>
+        </>
+    );
+};
 
-export const getServerSideProps = ({ req,res }) => {
-    setCookie('test', 'value', { req, res, maxAge: 60 * 6 * 24 });
-    getCookie('test', { req, res });
-    getCookies({ req, res });
-    deleteCookie('test', { req, res });
-  
-    return { props: {} };
-  };
-
-
-export default index
+export default Replies;

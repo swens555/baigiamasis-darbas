@@ -1,0 +1,20 @@
+.wrapper{
+    background-color: blueviolet;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    color: var(--primary-text-color);
+  }
+
+  .btn{
+    height: 2rem;
+    padding: 0.4rem;
+    background-color: chocolate;
+    
+  }

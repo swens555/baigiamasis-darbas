@@ -1,18 +1,17 @@
-import React from 'react'
-import Header from '@/components/Header/Header';
+import React from "react";
+import Header from "@/components/Header/Header";
 import { links } from "../constans/link";
-//import Login from './login';
-//import LoginForm from '../components/LoginForm/LoginForm';
-import Footer from '@/components/Footer/Footer';
+import LoginForm from "../components/LoginForm/LoginForm";
+import Footer from "@/components/Footer/Footer";
 
 const Index = () => {
   return (
     <div>
-      <Header logo={"FORUM"} links={links}/>
+      <Header logo={"FORUM"} links={links} />
+      <LoginForm />
       <Footer/>
-      
     </div>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

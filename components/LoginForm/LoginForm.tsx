@@ -3,7 +3,7 @@ import styles from "./LoginForm.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 import cookie from "js-cookie"
-//import { setCookie } from 'cookies-next';
+import Link from "next/link";
 //import { hasCookie } from 'cookies-next';
 import Button from "../Button/Button";
 
@@ -46,7 +46,7 @@ const LoginForm = () => {
             if (response.status === 200) {
               setBadData(false);
              cookie.set("jwt_token", response.data.jwt_token);
-              router.push("/replies");
+              router.push("/home");
             }
       
             setLoading(false);
@@ -84,7 +84,8 @@ const LoginForm = () => {
             <Button isLoading={isLoading} onClick={onLogin} title="Login" />
                 {isError && (
             <div className={styles.error}>
-                    Dont have an account?<a href="/register">Create one</a> 
+                    Dont have an account?
+                    <Link href="/register">Create one</Link> 
             </div>
                 ) }    
         

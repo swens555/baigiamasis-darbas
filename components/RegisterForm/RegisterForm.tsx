@@ -4,6 +4,7 @@ import styles from "@/components/RegisterForm/RegisterForm.module.css"
 import Button from '../Button/Button';
 import axios from "axios";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 
 const Register = () => {
@@ -51,7 +52,7 @@ const Register = () => {
           setBadData(false);
           alert("Account created successfully!");
          
-          router.push("/replies");
+          router.push("/home");
         }
   
         setLoading(false);
@@ -104,7 +105,8 @@ const Register = () => {
   <div className={styles.error}>Your provided data is bad</div>
 )}
                   <p>
-                      Have an account? <a href='/login'>Sign in</a>
+                      Have an account? 
+                      <Link href='/login'>Sign in</Link>
                   </p>
               </form>
         </div>
