@@ -1,10 +1,11 @@
 import React from 'react'
 import styles from "./Nav.module.css"
 import { useRouter } from "next/router";
+import cookie from "js-cookie";
 const Nav = () => {
     const router = useRouter();
     const signOut = () => {
-        //cookie.delete("jwt_token", response.data.jwt_token);
+        cookie.remove("jwt_token", response.data.jwt_token);
         router.push("/");
     };
     return (

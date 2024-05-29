@@ -9,7 +9,7 @@ const Index = () => {
     <div>
       <Header logo={"FORUM"} links={links} />
       <LoginForm />
-      <Footer/>
+      <Footer links={links}/>
     </div>
   );
 };
